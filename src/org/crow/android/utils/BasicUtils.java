@@ -174,7 +174,9 @@ public class BasicUtils {
 		}else if(value instanceof Boolean){
 			editor.putBoolean(key, (boolean) value);
 		}else{
-			editor.putString(key, value.toString());
+			// 如果不是上述几种基本数据类型，将其作为String类型
+			// WARNING: 此处不能使用toString方法，因为参数可能是null
+			editor.putString(key, String.valueOf(value));
 		}
 		SharedPreferencesCompat.apply(editor);
 	}
@@ -215,7 +217,9 @@ public class BasicUtils {
 		}else if(defValue instanceof Boolean){
 			return sp.getBoolean(key, (boolean) defValue);
 		}else{
-			return sp.getString(key, defValue.toString());
+			// 如果不是上述几种基本数据类型，将其作为String类型
+			// WARNING: 此处不能使用toString方法，因为参数可能是null
+			return sp.getString(key, String.valueOf(defValue));
 		}
 	}
 	/**
