@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fm_skinChangeSkin"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_changeSkinDefault"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更改为默认皮肤" />
+    <Button
+        android:id="@+id/btn_changeSkin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更改为日间皮肤" />
+    <Button
+        android:id="@+id/btn_changeSkin2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更改为夜间皮肤" />
+
+</LinearLayout>

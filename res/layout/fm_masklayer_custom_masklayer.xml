@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fm_masklayerCustomMasklayer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_showCustomMaskLayer1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示自定义遮罩层1" />
+    <Button
+        android:id="@+id/btn_showCustomMaskLayer2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示自定义遮罩层2" />
+    <Button
+        android:id="@+id/btn_showCustomMaskLayer3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示自定义遮罩层3" />
+
+</LinearLayout>

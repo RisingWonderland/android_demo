@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:test="http://schemas.android.com/apk/res/org.demo.crow"
+    android:id="@+id/fm_viewCustomView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <org.demo.crow.view.MySimpleCustomView 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        test:fillColor="@color/yellow"
+        test:textColor="@color/gold"
+        test:textSize="30sp" />
+
+</LinearLayout>

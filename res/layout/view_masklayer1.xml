@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/masklayer1_dialog"
+    android:orientation="vertical" >
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/masklayer1_title">
+        
+        <ImageView 
+            android:id="@+id/iv_masklayer1_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/masklayer1_close" />
+        <TextView 
+            android:id="@+id/tv_masklayer1_title"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1.05"
+            android:gravity="center"
+            android:text="自定义遮罩层"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"/>
+        <ImageView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/masklayer1_default_button"/>
+        
+    </LinearLayout>
+
+</LinearLayout>

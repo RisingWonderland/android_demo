@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fm_toastdialogCustomToastDialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_showBasicToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示基本Toast" />
+    <Button
+        android:id="@+id/btn_showCustomCenterToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="位于屏幕中央" />
+    <Button
+        android:id="@+id/btn_showCustomOffsetToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="带有偏移量" />
+    <Button
+        android:id="@+id/btn_showCustomViewToast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="自定义样式" />
+
+</LinearLayout>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fm_fileFileDemo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <Button 
+        android:id="@+id/btn_openAImgFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开一个图片文件"/>
+    <Button 
+        android:id="@+id/btn_openAVideoFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开一个视频文件"/>
+    <Button 
+        android:id="@+id/btn_openAnAudioFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开一个音频文件"/>
+    <Button 
+        android:id="@+id/btn_openATextFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开一个文本文件"/>
+    <Button 
+        android:id="@+id/btn_openANonePostfixFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开一个无后缀文件"/>
+    <Button 
+        android:id="@+id/btn_openADocFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开一个Doc文件"/>
+    <Button 
+        android:id="@+id/btn_openADocFileByWps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用WPS打开Doc文件并接受广播"/>
+    <Button 
+        android:id="@+id/btn_openAWebPage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开一个网页文件"/>
+    <Button 
+        android:id="@+id/btn_openWebUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="通过网址打开网页"/>
+    <Button 
+        android:id="@+id/btn_openAnApkFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打开一个apk文件"/>
+    <Button 
+        android:id="@+id/btn_createShortcutOnHomeScreen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="在主屏创建快捷方式"/>
+
+</LinearLayout>

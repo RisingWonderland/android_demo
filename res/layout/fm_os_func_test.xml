@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fm_osFuncTest"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <Button 
+        android:id="@+id/btn_isNetworkConnected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="网络连接是否可用"/>
+    <Button 
+        android:id="@+id/btn_getActiveConnection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获得当前网络连接"/>
+    <Button 
+        android:id="@+id/btn_isWifiConnected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="WIFI是否连接可用"/>
+    <Button 
+        android:id="@+id/btn_isMobileConnected"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="移动网络是否开启可用"/>
+
+</LinearLayout>

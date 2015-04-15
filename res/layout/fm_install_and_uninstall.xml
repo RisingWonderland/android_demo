@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fm_installAndUninstall"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="操作ES文件浏览器："/>
+    <Button
+        android:id="@+id/btn_checkIsRoot"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:text="检查设备是否ROOT" />
+    <Button
+        android:id="@+id/btn_standardInstallApp"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:text="APP标准安装" />
+    <Button 
+        android:id="@+id/btn_standardUninstallApp"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:text="APP标准卸载" />
+    <Button 
+        android:id="@+id/btn_silentInstallApp"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:text="APP静默安装" />
+    <Button 
+        android:id="@+id/btn_silentUninstallApp"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:text="APP静默卸载" />
+
+</LinearLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal" >
+    
+    <CheckBox 
+        android:id="@+id/cb_selectEclipseList"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView 
+        android:id="@+id/tv_eclipseName"
+        android:layout_width="200dip"
+        android:layout_height="50dip"/>
+    <ImageView 
+        android:id="@+id/iv_eclipseIcon"
+        android:layout_marginLeft="20dip"
+        android:layout_marginRight="20dip"
+        android:layout_width="50dip"
+        android:layout_height="50dip"/>
+    <Button 
+        android:id="@+id/btn_showEclipseInfo"
+        android:layout_marginLeft="30dip"
+        android:layout_width="100dip"
+        android:layout_height="50dip"
+        android:text="查看版本"/>
+    
+
+</LinearLayout>

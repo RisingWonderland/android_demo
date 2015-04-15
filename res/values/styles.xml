@@ -1,0 +1,70 @@
+<resources 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:test="http://schemas.android.com/apk/res/org.demo.crow">
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    
+    
+    
+    <!-- 样式切换，不同皮肤的自定义样式 -->
+    <style name="ResourcesStyle" parent="AppTheme">
+        <item name="mainMenuListBackgroundColor">@color/white</item>
+    </style>
+    
+    <style name="ResourcesStyle.r1" parent="@style/ResourcesStyle">
+        <item name="mainMenuListBackgroundColor">@color/orchid</item>
+    </style>
+    <style name="ResourcesStyle.r2" parent="@style/ResourcesStyle">
+        <item name="mainMenuListBackgroundColor">@color/darkgray</item>
+    </style>
+    
+    
+    <!-- 动画效果 -->
+    <style name="anim_menu_topbar">
+        <item name="android:windowEnterAnimation">@anim/menu_slide_in_top</item>
+        <item name="android:windowExitAnimation">@anim/menu_slide_out_bottom</item>
+    </style>
+    <style name="anim_menu_bottombar">
+        <item name="android:windowEnterAnimation">@anim/menu_slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/menu_slide_out_top</item>
+    </style>
+    <style name="anim_menu_leftbar">
+        <item name="android:windowEnterAnimation">@anim/menu_slide_in_left</item>
+        <item name="android:windowExitAnimation">@anim/menu_slide_out_right</item>
+    </style>
+    <style name="anim_menu_rightbar">
+        <item name="android:windowEnterAnimation">@anim/menu_slide_in_right</item>
+        <item name="android:windowExitAnimation">@anim/menu_slide_out_left</item>
+    </style>
+    <style name="anim_fade_pop">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+    
+    
+    <!-- 自定义遮罩层1的弹出效果 -->
+    <style name="masklayer1" parent="@android:style/Theme.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    
+
+</resources>

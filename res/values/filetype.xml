@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="image">
+        <item >.jpg</item>
+        <item >.jpeg</item>
+        <item >.png</item>
+        <item >.bmp</item>
+        <item >.gif</item>
+    </string-array>
+    <string-array name="audio">
+        <item>.mp3</item>
+        <item>.flac</item>
+        <item>.wav</item>
+        <item>.ogg</item>
+        <item>.midi</item>
+    </string-array>
+    <string-array name="video">
+        <item>.mp4</item>
+        <item>.m4v</item>
+        <item>.rm</item>
+        <item>.rmvb</item>
+        <item>.avi</item>
+        <item>.flv</item>
+    </string-array>
+    <string-array name="filePackage">
+        <item>.jar</item>
+        <item>.zip</item>
+        <item>.rar</item>
+        <item>.gz</item>
+        <item>.apk</item>
+        <item>.img</item>
+    </string-array>
+    <string-array name="webpage">
+        <item>.htm</item>
+        <item>.html</item>
+        <item>.asp</item>
+        <item>.php</item>
+        <item>.jsp</item>
+    </string-array>
+    <string-array name="text">
+        <item>.txt</item>
+        <item>.java</item>
+        <item>.c</item>
+        <item>.cpp</item>
+        <item>.py</item>
+        <item>.xml</item>
+        <item>.json</item>
+        <item>.log</item>
+    </string-array>
+    <string-array name="doc">
+        <item>.doc</item>
+        <item>.docx</item>
+    </string-array>
+    <string-array name="xls">
+        <item>.xls</item>
+        <item>.xlsx</item>
+    </string-array>
+    <string-array name="ppt">
+        <item>.ppt</item>
+        <item>.pptx</item>
+    </string-array>
+    <string-array name="pdf">
+        <item>.pdf</item>
+    </string-array>
+
+</resources>

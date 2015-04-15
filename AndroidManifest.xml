@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.demo.crow"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="21" />
+    
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" /> 
+	<uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" /><!-- 用于修改亮度的权限 -->
+
+    <application
+        android:name=".application.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/ResourcesStyle" >
+        <activity
+            android:name="org.demo.crow.main.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.demo.crow.fragment.SplitViewActivity"
+            android:label="@string/label_fragment_split_view" >
+        </activity>
+        <activity
+            android:name="org.demo.crow.view.CustomViewActivity"
+            android:label="@string/label_view_custom_view" >
+        </activity>
+        <activity
+            android:name="org.demo.crow.skin.ChangeSkinActivity"
+            android:label="@string/label_skin_change_skin" >
+        </activity>
+        <activity
+            android:name="org.demo.crow.toastdialog.CustomToastDialogActivity"
+            android:label="@string/label_toastdialog_custom_toastdialog" >
+        </activity>
+        <activity
+            android:name="org.demo.crow.popuplayer.SimplePopupWindowActivity"
+            android:label="@string/label_popupwindow_simple_popupwindow" >
+        </activity>
+        <activity
+            android:name="org.demo.crow.popuplayer.PopupWindowUtilsExampleActivity"
+            android:label="@string/label_popupwindow_simple_popupwindow" >
+        </activity>
+        <activity
+            android:name="org.demo.crow.masklayer.CustomMaskLayer"
+            android:label="@string/label_masklayer_custom_masklayer" >
+        </activity>
+        <activity
+            android:name="org.demo.crow.file.FileDemoActivity"
+            android:label="@string/label_file_file" >
+        </activity>
+        <activity
+            android:name="org.demo.crow.bitmap.ThumbnailDemoActivity"
+            android:label="@string/label_thumbnail_demo" >
+        </activity>
+        <activity
+            android:name="org.demo.crow.soundlight.SoundAndLightActivity"
+            android:label="@string/label_sound_and_light" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fm_popupwindowSimplePopupwindow"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+    
+    <Button 
+        android:id="@+id/btn_showSimplePopupWindow1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示简单的自定义PopupWindow"/>
+    <Button 
+        android:id="@+id/btn_showSimplePopupWindowFromBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="从底部展示自定义PopupWindow"/>
+    <Button 
+        android:id="@+id/btn_showSimplePopupWindowFromLeft"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="从左侧展示自定义PopupWindow"/>
+    <Button 
+        android:id="@+id/btn_showSimplePopupWindowFromBtnTop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="从上端依附控件"/>
+
+</LinearLayout>

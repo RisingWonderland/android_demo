@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fm_soundAndLight"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <Button 
+        android:id="@+id/btn_getMusicVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获得媒体音量"/>
+    <Button 
+        android:id="@+id/btn_deviceSilence"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设备静音"/>
+    <Button 
+        android:id="@+id/btn_restoreSound"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="恢复音量"/>
+    <Button 
+        android:id="@+id/btn_decreaseVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="减小音量"/>
+    <Button 
+        android:id="@+id/btn_increaseVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="增大音量"/>
+    <SeekBar 
+        android:id="@+id/sb_changeVolume"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="5"
+        android:max="15"/>
+    
+    
+    
+    <Button 
+        android:id="@+id/btn_getSysBrightness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获得当前系统亮度"/>
+    <Button 
+        android:id="@+id/btn_keepScreenOn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启屏幕常量"/>
+    <Button 
+        android:id="@+id/btn_releaseScreenOn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关闭屏幕常亮"/>
+    <Button 
+        android:id="@+id/btn_getBrightnessManageMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="当前亮度调节模式"/>
+    <Button 
+        android:id="@+id/btn_openBrightnessAudoMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启自动调节模式"/>
+    <Button 
+        android:id="@+id/btn_openBrightnessManualMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="开启手动调节模式"/>
+    <Button 
+        android:id="@+id/btn_decreaseBrightness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="降低屏幕亮度"/>
+    <Button 
+        android:id="@+id/btn_increaseBrightness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提高屏幕亮度"/>
+    <SeekBar 
+        android:id="@+id/sb_changeBrightness"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="45"
+        android:max="255"/>
+
+</LinearLayout>

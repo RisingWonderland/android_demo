@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fm_popupwindowPopupWindowUtilsExample"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical" >
+    
+    <TableLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <TableRow 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        
+	        <Button 
+		        android:id="@+id/btn_showPWOnScreenTop"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="从屏幕上方滑入PW"/>
+		    <Button 
+		        android:id="@+id/btn_showPWOnScreenBottom"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="从屏幕下方滑入PW"/>
+            
+        </TableRow>
+        <TableRow 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+		    <Button 
+		        android:id="@+id/btn_showPWOnScreenLeft"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="从屏幕左侧滑入PW"/>
+		    <Button 
+		        android:id="@+id/btn_showPWOnScreenRight"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="从屏幕右侧滑入PW"/>
+		    
+        </TableRow>
+        <TableRow 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+		    <Button 
+		        android:id="@+id/btn_showPWOnScreenCenter"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="在屏幕中央展示PW"/>
+		    <Button 
+		        android:id="@+id/btn_showPWCoverScreen"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="充满全屏幕展示PW"/>
+		    
+        </TableRow>
+        <TableRow 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+		    <Button 
+		        android:id="@+id/btn_showPWOnTopLeft"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="在控件左上展示PW"/>
+		    <Button 
+		        android:id="@+id/btn_showPWOnTop"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="在控件中上展示PW"/>
+		    <Button 
+		        android:id="@+id/btn_showPWOnTopRight"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="在控件右上展示PW"/>
+		    
+        </TableRow>
+        <TableRow 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+		    <Button 
+		        android:id="@+id/btn_showPWOnRight"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="在控件正右展示PW"/>
+			<Button 
+		        android:id="@+id/btn_showPWOnLeft"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="在控件正左展示PW"/>
+		    
+        </TableRow>
+        <TableRow 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+		    <Button 
+		        android:id="@+id/btn_showPWOnBottomLeft"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="在控件左下展示PW"/>
+		    <Button 
+		        android:id="@+id/btn_showPWOnBottom"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="在控件中下展示PW"/>
+		    <Button 
+		        android:id="@+id/btn_showPWOnBottomRight"
+		        android:layout_weight="1"
+		        android:layout_width="0dip"
+		        android:layout_height="wrap_content"
+		        android:text="在控件右下展示PW"/>
+		    
+        </TableRow>
+        
+    </TableLayout>
+        
+</RelativeLayout>

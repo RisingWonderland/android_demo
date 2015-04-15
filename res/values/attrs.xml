@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <declare-styleable name="MySimpleView">
+        <attr name="fillColor" format="color" />
+        <attr name="textColor" format="color" />
+        <attr name="textSize" format="dimension" />
+    </declare-styleable>
+    
+    
+    <declare-styleable name="ResourcesStyle">
+        <attr name="mainMenuListBackgroundColor" format="color" />
+    </declare-styleable>
+    
+</resources>
