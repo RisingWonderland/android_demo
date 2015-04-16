@@ -1,7 +1,6 @@
 package org.demo.crow.main;
 
 import java.io.File;
-import java.util.List;
 
 import org.crow.android.utils.BasicUtils;
 import org.crow.android.utils.CommonUtils;
@@ -17,8 +16,6 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -38,6 +35,8 @@ public class MainActivity extends ActionBarActivity {
 	private Resources res;
 	private FragmentManager fm;
 	private FragmentTransaction ft;
+	private DeviceBtnReceiver deviceBtnReceiver;
+	private WpsReceiver wpsReceiver;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,21 +71,26 @@ public class MainActivity extends ActionBarActivity {
 	 * 注册所有需要的监听器
 	 */
 	private void registerReceiver() {
+		deviceBtnReceiver = new DeviceBtnReceiver();
 		IntentFilter deviceBtnFilter = new IntentFilter(Intent.ACTION_CLOSE_SYSTEM_DIALOGS);
-		this.registerReceiver(new DeviceBtnReceiver(), deviceBtnFilter);
+		this.registerReceiver(deviceBtnReceiver, deviceBtnFilter);
 		
-		
-		IntentFilter wpsSaveFileFilter = new IntentFilter("cn.wps.moffice.file.save");
-		this.registerReceiver(new WpsReceiver(), wpsSaveFileFilter);
-		IntentFilter wpsCloseFileFilter = new IntentFilter("cn.wps.moffice.file.close");
-		this.registerReceiver(new WpsReceiver(), wpsCloseFileFilter);
+		wpsReceiver = new WpsReceiver();
+		IntentFilter wpsFilter = new IntentFilter();
+		wpsFilter.addAction("cn.wps.moffice.file.save");
+		wpsFilter.addAction("cn.wps.moffice.file.close");
+		this.registerReceiver(wpsReceiver, wpsFilter);
 	}
 	/**
 	 * 注销所有需要的监听器
 	 */
 	private void unregisterReceiver() {
-		this.unregisterReceiver(new DeviceBtnReceiver());
-		this.unregisterReceiver(new WpsReceiver());
+		if(deviceBtnReceiver != null){
+			this.unregisterReceiver(deviceBtnReceiver);
+		}
+		if(wpsReceiver != null){
+			this.unregisterReceiver(wpsReceiver);
+		}
 	}
 
 	@Override
