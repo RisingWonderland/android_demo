@@ -7,7 +7,6 @@ import org.crow.android.utils.FileUtils;
 import org.crow.android.utils.WpsUtils;
 import org.demo.crow.R;
 import org.demo.crow.application.MyApplication;
-import org.demo.crow.main.MainActivity;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -84,7 +83,7 @@ public class FileDemo extends Fragment {
 				// 下面代码所示的方法更简单，但执行的门槛降低，恐怕安全性不足。逻辑如下：
 				// 定义一个map集合，保存文件后缀和mimetype的对应关系；
 				// 获得目标文件的后缀，从集合中获取mimetype，之后即可获取intent
-				File file = new File(app.getSdcardPath() + "/android.crow.demo/电力安规2.mp4");
+				File file = new File(app.getSdcardPath() + "/android.crow.demo/2.mp4");
 				Intent intent = FileUtils.getFileIntent(file);
 				startActivity(intent);
 			}

@@ -6,6 +6,12 @@ import java.io.IOException;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningAppProcessInfo;
+import android.app.ActivityManager.RunningServiceInfo;
+import android.app.ActivityManager.RunningTaskInfo;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -29,11 +35,11 @@ public class CommonUtils {
 	 */
 	public static boolean rootStatus(){
 		String binPath = "/system/bin/su";
-		String xBinPath = "/system/xbin/su";
+		String xbinPath = "/system/xbin/su";
 		if(new File(binPath).exists() && FileUtils.isFileExecutable(binPath)){
 			return true;
 		}
-		if(new File(xBinPath).exists() && FileUtils.isFileExecutable(xBinPath)){
+		if(new File(xbinPath).exists() && FileUtils.isFileExecutable(xbinPath)){
 			return true;
 		}
 		return false;
@@ -136,18 +142,102 @@ public class CommonUtils {
 	}
 	
 	/**
+	 * 获得非系统应用的PackageInfo列表
+	 * @author Crow
+	 * @date 2015-4-16下午3:30:10
+	 * @param activity
+	 * @return
+	 */
+	public static List<PackageInfo> getCommonAppsList(Activity activity){
+		return activity.getPackageManager().getInstalledPackages(0);
+	}
+	
+	/**
 	 * log输出所有非系统应用的包名信息
 	 * @author Crow
 	 * @date 2015-4-9下午9:11:43
 	 */
 	public static void showAllCommonApps(Activity activity){
-		List<PackageInfo> packages = activity.getPackageManager().getInstalledPackages(0);
+		List<PackageInfo> packages = getCommonAppsList(activity);
         for(int i=0,l=packages.size();i < l;i++){
         	PackageInfo pi = packages.get(i); 
         	if((pi.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0){
         		Log.i("Package: ", pi.packageName);
         	}
         }
+	}
+	
+	/**
+	 * 获得正在运行中的进程的RunningAppProcessInfo对象的列表
+	 * @author Crow
+	 * @date 2015-4-16下午3:32:34
+	 * @param activity
+	 * @return
+	 */
+	public static List<RunningAppProcessInfo> getRunningProcessesList(Activity activity){
+		ActivityManager am = (ActivityManager) activity.getSystemService(Context.ACTIVITY_SERVICE);
+		return am.getRunningAppProcesses();
+	}
+	
+	/**
+	 * log输出正在运行的进程的名称
+	 * @author Crow
+	 * @date 2015-4-16下午3:28:11
+	 * @param activity
+	 */
+	public static void showRunningApps(Activity activity){
+		List<RunningAppProcessInfo> runAppsList = getRunningProcessesList(activity);
+		for(ActivityManager.RunningAppProcessInfo info : runAppsList){
+			Log.i(TAG, info.processName);
+		}
+	}
+	
+	/**
+	 * 获得当前活动程序的相关信息
+	 * @author Crow
+	 * @date 2015-4-16下午4:19:25
+	 * @param activity
+	 * @return
+	 */
+	public static ComponentName getActiveApp(Activity activity){
+		ActivityManager am = (ActivityManager) activity.getSystemService(Context.ACTIVITY_SERVICE);
+		return am.getRunningTasks(1).get(0).topActivity;
+	}
+	
+	/**
+	 * log输出当前活动程序的
+	 * @author Crow
+	 * @date 2015-4-16下午4:22:51
+	 * @param activity
+	 */
+	public static void showActiveApp(Activity activity){
+		ComponentName cn = getActiveApp(activity);
+		Log.i(TAG, cn.getPackageName() + " / " + cn.getClassName());
+	}
+	
+	/**
+	 * 获得运行中的Service的列表
+	 * @author Crow
+	 * @date 2015-4-16下午4:25:24
+	 * @param activity
+	 * @return
+	 */
+	public static List<RunningServiceInfo> getRunningServicesList(Activity activity){
+		ActivityManager am = (ActivityManager) activity.getSystemService(Context.ACTIVITY_SERVICE);
+		return am.getRunningServices(Integer.MAX_VALUE);
+	}
+	
+	/**
+	 * log输出所有运行中的Service
+	 * @author Crow
+	 * @date 2015-4-16下午4:28:17
+	 * @param activity
+	 */
+	public static void showRunningServices(Activity activity){
+		List<RunningServiceInfo> serviceList = getRunningServicesList(activity);
+		for(RunningServiceInfo info : serviceList){
+			Log.i(TAG, info.service.getPackageName() + " / " + info.service.getClassName());
+		}
 	}
 	
 }

@@ -26,5 +26,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="移动网络是否开启可用"/>
+    <Button 
+        android:id="@+id/btn_showAllCommonApps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示所有非系统应用"/>
+    <Button 
+        android:id="@+id/btn_showRunningApps"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示运行时进程"/>
+    <Button 
+        android:id="@+id/btn_showActiveApp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示活动进程"/>
+    <Button 
+        android:id="@+id/btn_showRunningServices"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示运行中服务"/>
 
 </LinearLayout>

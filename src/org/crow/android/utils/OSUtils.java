@@ -52,7 +52,7 @@ import android.view.inputmethod.InputMethodManager;
  */
 public class OSUtils {
 	
-	private static final String TAG = "OSUtils";
+	private static final String TAG = "Crow_OSUtils";
 	
 	private static int LIGHT_CHANGE_RANGE = 5;// 亮度增大、降低的幅度
 	

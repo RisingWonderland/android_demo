@@ -1,6 +1,7 @@
 package org.demo.crow.os;
 
 import org.crow.android.utils.BasicUtils;
+import org.crow.android.utils.CommonUtils;
 import org.crow.android.utils.OSUtils;
 import org.demo.crow.R;
 
@@ -24,6 +25,10 @@ public class OSFuncTest extends Fragment {
 	private Button btn_getActiveConnection;
 	private Button btn_isWifiConnected;
 	private Button btn_isMobileConnected;
+	private Button btn_showAllCommonApps;
+	private Button btn_showRunningApps;
+	private Button btn_showActiveApp;
+	private Button btn_showRunningServices;
 	
 	@Override
 	public void onAttach(Activity activity) {
@@ -59,6 +64,10 @@ public class OSFuncTest extends Fragment {
 		btn_getActiveConnection = (Button) view.findViewById(R.id.btn_getActiveConnection);
 		btn_isWifiConnected = (Button) view.findViewById(R.id.btn_isWifiConnected);
 		btn_isMobileConnected = (Button) view.findViewById(R.id.btn_isMobileConnected);
+		btn_showAllCommonApps = (Button) view.findViewById(R.id.btn_showAllCommonApps);
+		btn_showRunningApps = (Button) view.findViewById(R.id.btn_showRunningApps);
+		btn_showActiveApp = (Button) view.findViewById(R.id.btn_showActiveApp);
+		btn_showRunningServices = (Button) view.findViewById(R.id.btn_showRunningServices);
 	}
 
 	/**
@@ -98,6 +107,34 @@ public class OSFuncTest extends Fragment {
 			public void onClick(View v) {
 				boolean isMobileConnected = OSUtils.isMobileConnected(mActivity);
 				BasicUtils.showToast(mActivity, isMobileConnected ? "移动网络可用" : "移动网络不可用");
+			}
+		});
+		// 展示所有非系统应用
+		btn_showAllCommonApps.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				CommonUtils.showAllCommonApps(mActivity);
+			}
+		});
+		// 展示运行时进程
+		btn_showRunningApps.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				CommonUtils.showRunningApps(mActivity);
+			}
+		});
+		// 展示活动进程
+		btn_showActiveApp.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				CommonUtils.showActiveApp(mActivity);
+			}
+		});
+		// 展示运行中服务
+		btn_showRunningServices.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				CommonUtils.showRunningServices(mActivity);
 			}
 		});
 	}

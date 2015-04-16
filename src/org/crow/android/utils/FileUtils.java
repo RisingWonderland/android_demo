@@ -231,6 +231,7 @@ public class FileUtils {
 	 */
 	public static String getFilePermission(String filePath){
 		Process process = null;
+		String permission = null;
 		try {
 			process = Runtime.getRuntime().exec("ls -l " + filePath);
 			// 获得返回内容
@@ -238,7 +239,7 @@ public class FileUtils {
 			String str = br.readLine();
 			Log.i(TAG, str);
 			if(str != null && str.length() >= 10){
-				str = str.substring(0, 10);
+				permission = str.substring(0, 10);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -247,7 +248,7 @@ public class FileUtils {
 				process.destroy();
 			}
 		}
-		return "";
+		return permission;
 	}
 	
 	
