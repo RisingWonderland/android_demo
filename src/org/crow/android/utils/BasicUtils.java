@@ -135,8 +135,8 @@ public class BasicUtils {
 	 * @param mode Operating mode. Use 0 or MODE_PRIVATE for the default operation, MODE_WORLD_READABLE and MODE_WORLD_WRITEABLE to control permissions. The bit MODE_MULTI_PROCESS can also be used if multiple processes are mutating the same SharedPreferences file. MODE_MULTI_PROCESS is always on in apps targetting Gingerbread (Android 2.3) and below, and off by default in later versions.
 	 * @return
 	 */
-	public static SharedPreferences getSharedPreferences(Activity activity, String name, int mode){
-		return activity.getSharedPreferences(name, mode);
+	public static SharedPreferences getSharedPreferences(Context context, String name, int mode){
+		return context.getSharedPreferences(name, mode);
 	}
 	/**
 	 * 向指定的SharedPreferences插入一条数据。
@@ -148,22 +148,22 @@ public class BasicUtils {
 	 * @param key
 	 * @param value
 	 */
-	public static void setPrivateSharedPrefsData(Activity activity, String name, String key, String value){
-		setSharedPrefsData(activity, name, key, value, Context.MODE_PRIVATE);
+	public static void setPrivateSharedPrefsData(Context context, String name, String key, String value){
+		setSharedPrefsData(context, name, key, value, Context.MODE_PRIVATE);
 	}
 	/**
 	 * 向指定的SharedPreferences插入一条数据。
 	 * 模式自定
 	 * @author Crow
 	 * @date 2015-4-15上午9:36:03
-	 * @param activity
+	 * @param context
 	 * @param name
 	 * @param key
 	 * @param value
 	 * @param mode
 	 */
-	public static void setSharedPrefsData(Activity activity, String name, String key, Object value, int mode){
-		SharedPreferences sp = getSharedPreferences(activity, name, mode);
+	public static void setSharedPrefsData(Context context, String name, String key, Object value, int mode){
+		SharedPreferences sp = getSharedPreferences(context, name, mode);
 		SharedPreferences.Editor editor = sp.edit();
 		if(value instanceof Integer){
 			editor.putInt(key, (int) value);
@@ -185,29 +185,29 @@ public class BasicUtils {
 	 * 私有模式。
 	 * @author Crow
 	 * @date 2015-4-15上午9:45:14
-	 * @param activity
+	 * @param context
 	 * @param name
 	 * @param key
 	 * @param defValue
 	 * @return
 	 */
-	public static Object getPrivateSharedPrefsData(Activity activity, String name, String key, Object defValue){
-		return getSharedPrefsData(activity, name, key, defValue, Context.MODE_PRIVATE);
+	public static Object getPrivateSharedPrefsData(Context context, String name, String key, Object defValue){
+		return getSharedPrefsData(context, name, key, defValue, Context.MODE_PRIVATE);
 	}
 	/**
 	 * 从指定的SharedPreferences获取一条数据。
 	 * 模式自定。
 	 * @author Crow
 	 * @date 2015-4-15上午9:43:52
-	 * @param activity
+	 * @param context
 	 * @param name
 	 * @param key
 	 * @param defValue
 	 * @param mode
 	 * @return
 	 */
-	public static Object getSharedPrefsData(Activity activity, String name, String key, Object defValue, int mode){
-		SharedPreferences sp = getSharedPreferences(activity, name, mode);
+	public static Object getSharedPrefsData(Context context, String name, String key, Object defValue, int mode){
+		SharedPreferences sp = getSharedPreferences(context, name, mode);
 		if(defValue instanceof Integer){
 			return sp.getInt(key, (int) defValue);
 		}else if(defValue instanceof Float){
@@ -226,40 +226,40 @@ public class BasicUtils {
 	 * 检查指定的SharedPreferences是否存在对应的key值
 	 * @author Crow
 	 * @date 2015-4-15上午9:55:56
-	 * @param activity
+	 * @param context
 	 * @param name
 	 * @param key
 	 * @param mode
 	 * @return
 	 */
-	public static boolean checkSharedPrefsKey(Activity activity, String name, String key, int mode){
-		SharedPreferences sp = getSharedPreferences(activity, name, mode);
+	public static boolean checkSharedPrefsKey(Context context, String name, String key, int mode){
+		SharedPreferences sp = getSharedPreferences(context, name, mode);
 		return sp.contains(key);
 	}
 	/**
 	 * 从指定的SharedPreferences中获取一个包含所有键值对的Map集合
 	 * @author Crow
 	 * @date 2015-4-15上午9:56:23
-	 * @param activity
+	 * @param context
 	 * @param name
 	 * @param mode
 	 * @return
 	 */
-	public static Map<String, ?> getSharedPrefsDataMap(Activity activity, String name, int mode){
-		SharedPreferences sp = getSharedPreferences(activity, name, mode);
+	public static Map<String, ?> getSharedPrefsDataMap(Context context, String name, int mode){
+		SharedPreferences sp = getSharedPreferences(context, name, mode);
 		return sp.getAll();
 	}
 	/**
 	 * 移除指定的SharedPreferences中某值
 	 * @author Crow
 	 * @date 2015-4-15上午9:58:04
-	 * @param activity
+	 * @param context
 	 * @param name
 	 * @param key
 	 * @param mode
 	 */
-	public static void removeSharedPrefsData(Activity activity, String name, String key, int mode){
-		SharedPreferences sp = getSharedPreferences(activity, name, mode);
+	public static void removeSharedPrefsData(Context context, String name, String key, int mode){
+		SharedPreferences sp = getSharedPreferences(context, name, mode);
 		SharedPreferences.Editor editor = sp.edit();
 		editor.remove(key);
 		SharedPreferencesCompat.apply(editor);
@@ -268,12 +268,12 @@ public class BasicUtils {
 	 * 移除指定的SharedPreferences中的所有值
 	 * @author Crow
 	 * @date 2015-4-15上午10:00:41
-	 * @param activity
+	 * @param context
 	 * @param name
 	 * @param mode
 	 */
-	public static void removeAllSharedPrefsData(Activity activity, String name, int mode){
-		SharedPreferences sp = getSharedPreferences(activity, name, mode);
+	public static void removeAllSharedPrefsData(Context context, String name, int mode){
+		SharedPreferences sp = getSharedPreferences(context, name, mode);
 		SharedPreferences.Editor editor = sp.edit();
 		editor.clear();
 		SharedPreferencesCompat.apply(editor);

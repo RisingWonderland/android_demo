@@ -81,6 +81,8 @@
             android:name="org.demo.crow.soundlight.SoundAndLightActivity"
             android:label="@string/label_sound_and_light" >
         </activity>
+        
+        <service android:name="org.demo.crow.service.SimpleService"></service>
     </application>
 
 </manifest>

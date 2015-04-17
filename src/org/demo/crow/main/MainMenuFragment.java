@@ -22,6 +22,8 @@ import org.demo.crow.popuplayer.PopupWindowUtilsExample;
 import org.demo.crow.popuplayer.PopupWindowUtilsExampleActivity;
 import org.demo.crow.popuplayer.SimplePopupWindow;
 import org.demo.crow.popuplayer.SimplePopupWindowActivity;
+import org.demo.crow.service.SimpleServiceDemo;
+import org.demo.crow.service.SimpleServiceDemoActivity;
 import org.demo.crow.skin.ChangeSkin;
 import org.demo.crow.skin.ChangeSkinActivity;
 import org.demo.crow.soundlight.SoundAndLight;
@@ -187,7 +189,8 @@ public class MainMenuFragment extends Fragment implements OnItemClickListener {
 			"File相关操作演示",
 			"缩略图相关演示",
 			"声音和亮度",
-			"系统相关功能"
+			"系统相关功能",
+			"Service演示"
 		};
 		return data;
 	}
@@ -235,6 +238,8 @@ public class MainMenuFragment extends Fragment implements OnItemClickListener {
 				fragment = new SoundAndLight();
 			}else if(position == 15 && mActivity.findViewById(R.id.fm_osFuncTest) == null){
 				fragment = new OSFuncTest();
+			}else if(position == 16 && mActivity.findViewById(R.id.fm_simpleServiceDemo) == null){
+				fragment = new SimpleServiceDemo();
 			}
 			if(fragment == null){
 				return;
@@ -292,6 +297,9 @@ public class MainMenuFragment extends Fragment implements OnItemClickListener {
 				break;
 			case 15: 
 				intent = new Intent(mActivity, OSFuncTestActivity.class);
+				break;
+			case 16: 
+				intent = new Intent(mActivity, SimpleServiceDemoActivity.class);
 				break;
 			}
 			startActivity(intent);

@@ -69,11 +69,11 @@ public class OSUtils {
 	 * 获得音频管理器
 	 * @author Crow
 	 * @date 2015-4-12上午11:38:42
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static AudioManager getAudioManager(Activity activity){
-		return (AudioManager) activity.getSystemService(Context.AUDIO_SERVICE);
+	public static AudioManager getAudioManager(Context context){
+		return (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 	}
 	
 	/**
@@ -81,11 +81,11 @@ public class OSUtils {
 	 * 安卓的最大音量是15。
 	 * @author Crow
 	 * @date 2015-4-12上午11:49:51
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static int[] getSystemVolume(Activity activity){
-		AudioManager am = getAudioManager(activity);
+	public static int[] getSystemVolume(Context context){
+		AudioManager am = getAudioManager(context);
 		int maxSysVol = am.getStreamMaxVolume(AudioManager.STREAM_SYSTEM);
 		int curSysVol = am.getStreamVolume(AudioManager.STREAM_SYSTEM);
 		return new int[]{curSysVol, maxSysVol};
@@ -94,11 +94,11 @@ public class OSUtils {
 	 * 返回通话音量，数组元素1是当前音量，元素2是最大音量
 	 * @author Crow
 	 * @date 2015-4-12上午11:50:43
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static int[] getVoiceVolume(Activity activity){
-		AudioManager am = getAudioManager(activity);
+	public static int[] getVoiceVolume(Context context){
+		AudioManager am = getAudioManager(context);
 		int maxVoiceVol = am.getStreamMaxVolume(AudioManager.STREAM_VOICE_CALL);
 		int curVoiceVol = am.getStreamVolume(AudioManager.STREAM_VOICE_CALL);
 		return new int[]{curVoiceVol, maxVoiceVol};
@@ -107,11 +107,11 @@ public class OSUtils {
 	 * 返回媒体音量，数组元素1是当前音量，元素2是最大音量
 	 * @author Crow
 	 * @date 2015-4-12上午11:50:49
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static int[] getMusicVolume(Activity activity){
-		AudioManager am = getAudioManager(activity);
+	public static int[] getMusicVolume(Context context){
+		AudioManager am = getAudioManager(context);
 		int maxMusicVol = am.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
 		int curMusicVol = am.getStreamVolume(AudioManager.STREAM_MUSIC);
 		return new int[]{curMusicVol, maxMusicVol};
@@ -120,11 +120,11 @@ public class OSUtils {
 	 * 返回铃声音量，数组元素1是当前音量，元素2是最大音量
 	 * @author Crow
 	 * @date 2015-4-12上午11:50:52
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static int[] getRingVolume(Activity activity){
-		AudioManager am = getAudioManager(activity);
+	public static int[] getRingVolume(Context context){
+		AudioManager am = getAudioManager(context);
 		int maxRingVol = am.getStreamMaxVolume(AudioManager.STREAM_RING);
 		int curRingVol = am.getStreamVolume(AudioManager.STREAM_RING);
 		return new int[]{curRingVol, maxRingVol};
@@ -133,11 +133,11 @@ public class OSUtils {
 	 * 返回闹钟提示音量，数组元素1是当前音量，元素2是最大音量
 	 * @author Crow
 	 * @date 2015-4-12上午11:50:56
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static int[] getAlarmVolume(Activity activity){
-		AudioManager am = getAudioManager(activity);
+	public static int[] getAlarmVolume(Context context){
+		AudioManager am = getAudioManager(context);
 		int maxAlarmVol = am.getStreamMaxVolume(AudioManager.STREAM_ALARM);
 		int curAlarmVol = am.getStreamVolume(AudioManager.STREAM_ALARM);
 		return new int[]{curAlarmVol, maxAlarmVol};
@@ -166,14 +166,14 @@ public class OSUtils {
 	 * 如果要恢复到静音前的音量，调用restoreVolume方法，但两个方法要传入相同的activity
 	 * @author Crow
 	 * @date 2015-4-12上午11:57:06
-	 * @param activity
+	 * @param context
 	 */
-	public static void deviceSilence(Activity activity){
-		AudioManager am = (AudioManager) activity.getSystemService(Context.AUDIO_SERVICE);
+	public static void deviceSilence(Context context){
+		AudioManager am = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 		// 获得媒体音量
 		int curMusicVol = am.getStreamVolume(AudioManager.STREAM_MUSIC);
 		// 将当前音量存入SharedPreferences，用于支持restoreVolume方法
-		SharedPreferences sp = activity.getSharedPreferences("osutils_audio_last_vol", Context.MODE_PRIVATE);
+		SharedPreferences sp = context.getSharedPreferences("osutils_audio_last_vol", Context.MODE_PRIVATE);
 		Editor editor = sp.edit();
 		editor.putInt("lastMusicVol", curMusicVol);
 		editor.commit();
@@ -185,10 +185,10 @@ public class OSUtils {
 	 * 将设备媒体音量设置为执行了deviceSilence方法前的大小。
 	 * @author Crow
 	 * @date 2015-4-12下午12:04:09
-	 * @param activity
+	 * @param context
 	 */
-	public static void restoreVolume(Activity activity){
-		restoreVolume(activity, -1);
+	public static void restoreVolume(Context context){
+		restoreVolume(context, -1);
 	}
 	/**
 	 * 将设备媒体音量设置为执行了deviceSilence方法前的大小。
@@ -196,13 +196,13 @@ public class OSUtils {
 	 * 否则，不做任何修改。
 	 * @author Crow
 	 * @date 2015-4-12下午12:13:25
-	 * @param activity
+	 * @param context
 	 * @param defValue
 	 */
-	public static void restoreVolume(Activity activity, int defValue){
-		AudioManager am = (AudioManager) activity.getSystemService(Context.AUDIO_SERVICE);
+	public static void restoreVolume(Context context, int defValue){
+		AudioManager am = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 		// 获得SharedPreferences里面保存的音量值
-		SharedPreferences sp = activity.getSharedPreferences("osutils_audio_last_vol", Context.MODE_PRIVATE);
+		SharedPreferences sp = context.getSharedPreferences("osutils_audio_last_vol", Context.MODE_PRIVATE);
 		int lastMusicVol;
 		if( sp.contains("lastMusicVol") ){
 			lastMusicVol = sp.getInt("lastMusicVol", 0);
@@ -218,25 +218,25 @@ public class OSUtils {
 	 * 降低媒体音量
 	 * @author Crow
 	 * @date 2015-4-12下午4:10:47
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static int lowerVolume(Activity activity){
-		AudioManager am = getAudioManager(activity);
+	public static int lowerVolume(Context context){
+		AudioManager am = getAudioManager(context);
 		am.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_LOWER, AudioManager.FLAG_SHOW_UI|AudioManager.FLAG_PLAY_SOUND);
-		return getMusicVolume(activity)[0];
+		return getMusicVolume(context)[0];
 	}
 	/**
 	 * 提高媒体音量
 	 * @author Crow
 	 * @date 2015-4-12下午4:12:58
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static int higherVolume(Activity activity){
-		AudioManager am = getAudioManager(activity);
+	public static int higherVolume(Context context){
+		AudioManager am = getAudioManager(context);
 		am.adjustStreamVolume(AudioManager.STREAM_MUSIC, AudioManager.ADJUST_RAISE, AudioManager.FLAG_SHOW_UI|AudioManager.FLAG_PLAY_SOUND);
-		return getMusicVolume(activity)[0];
+		return getMusicVolume(context)[0];
 	}
 	
 	
@@ -247,11 +247,11 @@ public class OSUtils {
 	 * 获得当前系统屏幕亮度
 	 * @author Crow
 	 * @date 2015-4-12下午5:32:33
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static int getSystemScreenBrightness(Activity activity){
-		ContentResolver cr = activity.getContentResolver();
+	public static int getSystemScreenBrightness(Context context){
+		ContentResolver cr = context.getContentResolver();
 		return Settings.System.getInt(cr, Settings.System.SCREEN_BRIGHTNESS, -1);
 	}
 	/**
@@ -259,41 +259,41 @@ public class OSUtils {
 	 * SCREEN_BRIGHTNESS_MODE_AUTOMATIC和SCREEN_BRIGHTNESS_MODE_MANUAL进行比较。
 	 * @author Crow
 	 * @date 2015-4-12下午5:39:13
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static int getScreenBrightnessMode(Activity activity){
-		ContentResolver cr = activity.getContentResolver();
+	public static int getScreenBrightnessMode(Context context){
+		ContentResolver cr = context.getContentResolver();
 		return Settings.System.getInt(cr, Settings.System.SCREEN_BRIGHTNESS_MODE, -1);
 	}
 	/**
 	 * 返回当前是否是自动亮度调节模式
 	 * @author Crow
 	 * @date 2015-4-13下午1:05:10
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static boolean isBrightnessAutomatic(Activity activity){
-		return (getScreenBrightnessMode(activity) == SCREEN_BRIGHTNESS_MODE_AUTOMATIC) ? true : false;
+	public static boolean isBrightnessAutomatic(Context context){
+		return (getScreenBrightnessMode(context) == SCREEN_BRIGHTNESS_MODE_AUTOMATIC) ? true : false;
 	}
 	/**
 	 * 将当前亮度调节模式设置为自动
 	 * @author Crow
 	 * @date 2015-4-12下午7:23:54
-	 * @param activity
+	 * @param context
 	 */
-	public static void setBrightnessAutomatic(Activity activity){
-		ContentResolver cr = activity.getContentResolver();
+	public static void setBrightnessAutomatic(Context context){
+		ContentResolver cr = context.getContentResolver();
 		Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_AUTOMATIC);
 	}
 	/**
 	 * 将当前亮度调节模式设置为手动
 	 * @author Crow
 	 * @date 2015-4-12下午7:26:12
-	 * @param activity
+	 * @param context
 	 */
-	public static void setBrightnessManual(Activity activity){
-		ContentResolver cr = activity.getContentResolver();
+	public static void setBrightnessManual(Context context){
+		ContentResolver cr = context.getContentResolver();
 		Settings.System.putInt(cr, Settings.System.SCREEN_BRIGHTNESS_MODE, Settings.System.SCREEN_BRIGHTNESS_MODE_MANUAL);
 	}
 	
@@ -458,11 +458,11 @@ public class OSUtils {
 	 * 判断当前网络连接是否可用（存在）
 	 * @author Crow
 	 * @date 2015-4-13下午3:24:31
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static boolean isNetworkConnected(Activity activity){
-		ConnectivityManager cm = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+	public static boolean isNetworkConnected(Context context){
+		ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo[] nis = cm.getAllNetworkInfo();
 		for(NetworkInfo ni : nis){
 			if(ni.isConnected() && ni.isAvailable()){
@@ -475,22 +475,22 @@ public class OSUtils {
 	 * 获得当前网络连接
 	 * @author Crow
 	 * @date 2015-4-13下午4:38:01
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static NetworkInfo getActiveConnection(Activity activity){
-		ConnectivityManager cm = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+	public static NetworkInfo getActiveConnection(Context context){
+		ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		return cm.getActiveNetworkInfo();
 	}
 	/**
 	 * 判断WIFI网络是否连接可用
 	 * @author Crow
 	 * @date 2015-4-13下午4:47:41
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static boolean isWifiConnected(Activity activity){
-		ConnectivityManager cm = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+	public static boolean isWifiConnected(Context context){
+		ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo ni_wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
 		if(ni_wifi.isConnected() && ni_wifi.isAvailable()){
 			return true;
@@ -501,11 +501,11 @@ public class OSUtils {
 	 * 判断Mobile网络是否可用
 	 * @author Crow
 	 * @date 2015-4-13下午4:48:41
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static boolean isMobileConnected(Activity activity){
-		ConnectivityManager cm = (ConnectivityManager) activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+	public static boolean isMobileConnected(Context context){
+		ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo ni_mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 		if(ni_mobile.isConnected() && ni_mobile.isAvailable()){
 			return true;
@@ -516,10 +516,10 @@ public class OSUtils {
 	 * 进入网络配置界面
 	 * @author Crow
 	 * @date 2015-4-13下午4:53:41
-	 * @param activity
+	 * @param context
 	 */
-	public static void enterWirelessConfigurationActivity(Activity activity){
-		activity.startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
+	public static void enterWirelessConfigurationActivity(Context context){
+		context.startActivity(new Intent(Settings.ACTION_WIRELESS_SETTINGS));
 	}
 	
 	
@@ -530,10 +530,10 @@ public class OSUtils {
 	 * 让虚拟键盘在开启和关闭之间转换
 	 * @author Crow
 	 * @date 2015-4-13下午3:05:24
-	 * @param activity
+	 * @param context
 	 */
-	public static void toggleVirtualKeyboard(Activity activity){
-		InputMethodManager imm = (InputMethodManager) activity.getSystemService(Context.INPUT_METHOD_SERVICE);
+	public static void toggleVirtualKeyboard(Context context){
+		InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
 		imm.toggleSoftInput(InputMethodManager.SHOW_IMPLICIT, InputMethodManager.HIDE_NOT_ALWAYS);
 	}
 	

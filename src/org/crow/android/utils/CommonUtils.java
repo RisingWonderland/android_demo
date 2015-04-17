@@ -47,13 +47,13 @@ public class CommonUtils {
 
 	/**
 	 * 标准安装app
-	 * @param activity 
+	 * @param context 
 	 * @param apkPath 要安装的apk文件的路径
 	 */
-	public static void install(Activity activity, String apkPath){
+	public static void install(Context context, String apkPath){
 		Intent intent = new Intent(Intent.ACTION_VIEW);
 		intent.setDataAndType(Uri.fromFile(new File(apkPath)), "application/vnd.android.package-archive");
-		activity.startActivity(intent);
+		context.startActivity(intent);
 	}
 	
 	/**
@@ -61,10 +61,10 @@ public class CommonUtils {
 	 * @param activity 
 	 * @param packagename 目标app的包名
 	 */
-	public static void uninstall(Activity activity, String packageName){
+	public static void uninstall(Context context, String packageName){
 		Uri packageURI = Uri.parse("package:" + packageName);
 		Intent intent = new Intent(Intent.ACTION_DELETE, packageURI);
-		activity.startActivity(intent);
+		context.startActivity(intent);
 	}
 	
 	/**
@@ -145,20 +145,21 @@ public class CommonUtils {
 	 * 获得非系统应用的PackageInfo列表
 	 * @author Crow
 	 * @date 2015-4-16下午3:30:10
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static List<PackageInfo> getCommonAppsList(Activity activity){
-		return activity.getPackageManager().getInstalledPackages(0);
+	public static List<PackageInfo> getCommonAppsList(Context context){
+		return context.getPackageManager().getInstalledPackages(0);
 	}
 	
 	/**
 	 * log输出所有非系统应用的包名信息
 	 * @author Crow
 	 * @date 2015-4-9下午9:11:43
+	 * @param context
 	 */
-	public static void showAllCommonApps(Activity activity){
-		List<PackageInfo> packages = getCommonAppsList(activity);
+	public static void showAllCommonApps(Context context){
+		List<PackageInfo> packages = getCommonAppsList(context);
         for(int i=0,l=packages.size();i < l;i++){
         	PackageInfo pi = packages.get(i); 
         	if((pi.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0){
@@ -174,8 +175,8 @@ public class CommonUtils {
 	 * @param activity
 	 * @return
 	 */
-	public static List<RunningAppProcessInfo> getRunningProcessesList(Activity activity){
-		ActivityManager am = (ActivityManager) activity.getSystemService(Context.ACTIVITY_SERVICE);
+	public static List<RunningAppProcessInfo> getRunningProcessesList(Context context){
+		ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
 		return am.getRunningAppProcesses();
 	}
 	
@@ -183,10 +184,10 @@ public class CommonUtils {
 	 * log输出正在运行的进程的名称
 	 * @author Crow
 	 * @date 2015-4-16下午3:28:11
-	 * @param activity
+	 * @param context
 	 */
-	public static void showRunningApps(Activity activity){
-		List<RunningAppProcessInfo> runAppsList = getRunningProcessesList(activity);
+	public static void showRunningApps(Context context){
+		List<RunningAppProcessInfo> runAppsList = getRunningProcessesList(context);
 		for(ActivityManager.RunningAppProcessInfo info : runAppsList){
 			Log.i(TAG, info.processName);
 		}
@@ -196,11 +197,11 @@ public class CommonUtils {
 	 * 获得当前活动程序的相关信息
 	 * @author Crow
 	 * @date 2015-4-16下午4:19:25
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static ComponentName getActiveApp(Activity activity){
-		ActivityManager am = (ActivityManager) activity.getSystemService(Context.ACTIVITY_SERVICE);
+	public static ComponentName getActiveApp(Context context){
+		ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
 		return am.getRunningTasks(1).get(0).topActivity;
 	}
 	
@@ -208,10 +209,10 @@ public class CommonUtils {
 	 * log输出当前活动程序的
 	 * @author Crow
 	 * @date 2015-4-16下午4:22:51
-	 * @param activity
+	 * @param context
 	 */
-	public static void showActiveApp(Activity activity){
-		ComponentName cn = getActiveApp(activity);
+	public static void showActiveApp(Context context){
+		ComponentName cn = getActiveApp(context);
 		Log.i(TAG, cn.getPackageName() + " / " + cn.getClassName());
 	}
 	
@@ -219,11 +220,11 @@ public class CommonUtils {
 	 * 获得运行中的Service的列表
 	 * @author Crow
 	 * @date 2015-4-16下午4:25:24
-	 * @param activity
+	 * @param context
 	 * @return
 	 */
-	public static List<RunningServiceInfo> getRunningServicesList(Activity activity){
-		ActivityManager am = (ActivityManager) activity.getSystemService(Context.ACTIVITY_SERVICE);
+	public static List<RunningServiceInfo> getRunningServicesList(Context context){
+		ActivityManager am = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
 		return am.getRunningServices(Integer.MAX_VALUE);
 	}
 	
@@ -233,8 +234,8 @@ public class CommonUtils {
 	 * @date 2015-4-16下午4:28:17
 	 * @param activity
 	 */
-	public static void showRunningServices(Activity activity){
-		List<RunningServiceInfo> serviceList = getRunningServicesList(activity);
+	public static void showRunningServices(Context context){
+		List<RunningServiceInfo> serviceList = getRunningServicesList(context);
 		for(RunningServiceInfo info : serviceList){
 			Log.i(TAG, info.service.getPackageName() + " / " + info.service.getClassName());
 		}

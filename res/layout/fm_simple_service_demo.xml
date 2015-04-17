@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fm_simpleServiceDemo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+
+    <Button 
+        android:id="@+id/btn_showActiveAppEvery5Minutes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="服务1：每5秒Log"/>
+    <Button 
+        android:id="@+id/btn_stopSimpleService1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="停止服务1"/>
+    <Button 
+        android:id="@+id/btn_bindSimpleService1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="绑定服务1"/>
+    <Button 
+        android:id="@+id/btn_unbindSimpleService1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="解绑服务1"/>
+
+</LinearLayout>
