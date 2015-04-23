@@ -81,6 +81,14 @@
             android:name="org.demo.crow.soundlight.SoundAndLightActivity"
             android:label="@string/label_sound_and_light" >
         </activity>
+        <activity 
+            android:name="org.demo.crow.activity.A"
+            android:label="@string/label_activity_a">
+        </activity>
+        <activity 
+            android:name="org.demo.crow.activity.B"
+            android:label="@string/label_activity_b">
+        </activity>
         
         <service android:name="org.demo.crow.service.SimpleService"></service>
     </application>

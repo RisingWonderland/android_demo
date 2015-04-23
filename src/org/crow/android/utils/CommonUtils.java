@@ -3,13 +3,12 @@ package org.crow.android.utils;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningAppProcessInfo;
 import android.app.ActivityManager.RunningServiceInfo;
-import android.app.ActivityManager.RunningTaskInfo;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -142,14 +141,52 @@ public class CommonUtils {
 	}
 	
 	/**
-	 * 获得非系统应用的PackageInfo列表
+	 * 获得所有已安装应用的PackageInfo列表
 	 * @author Crow
 	 * @date 2015-4-16下午3:30:10
 	 * @param context
 	 * @return
 	 */
-	public static List<PackageInfo> getCommonAppsList(Context context){
+	public static List<PackageInfo> getAllAppsPackageInfo(Context context){
 		return context.getPackageManager().getInstalledPackages(0);
+	}
+	
+	/**
+	 * 获得所有系统应用的PackageInfo列表
+	 * @author Crow
+	 * @date 2015-4-23上午11:12:40
+	 * @param context
+	 * @return
+	 */
+	public static List<PackageInfo> getSystemApps(Context context){
+		List<PackageInfo> piList = getAllAppsPackageInfo(context);
+		List<PackageInfo> appList = new ArrayList<PackageInfo>();
+		for(int i=0,l=piList.size();i < l;i++){
+			PackageInfo pi = piList.get(i);
+			if((pi.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0){
+				appList.add(pi);
+			}
+		}
+		return appList;
+	}
+	
+	/**
+	 * 获得所有非系统应用的PackageInfo列表
+	 * @author Crow
+	 * @date 2015-4-23上午11:13:59
+	 * @param context
+	 * @return
+	 */
+	public static List<PackageInfo> getCommonApps(Context context){
+		List<PackageInfo> piList = getAllAppsPackageInfo(context);
+		List<PackageInfo> appList = new ArrayList<PackageInfo>();
+		for(int i=0,l=piList.size();i < l;i++){
+			PackageInfo pi = piList.get(i);
+			if((pi.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0){
+				appList.add(pi);
+			}
+		}
+		return appList;
 	}
 	
 	/**
@@ -158,14 +195,24 @@ public class CommonUtils {
 	 * @date 2015-4-9下午9:11:43
 	 * @param context
 	 */
-	public static void showAllCommonApps(Context context){
-		List<PackageInfo> packages = getCommonAppsList(context);
-        for(int i=0,l=packages.size();i < l;i++){
-        	PackageInfo pi = packages.get(i); 
-        	if((pi.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0){
-        		Log.i("Package: ", pi.packageName);
-        	}
-        }
+	public static void showCommonApps(Context context){
+        List<PackageInfo> list = getCommonApps(context);
+		for(int i=0,l=list.size();i < l;i++){
+			Log.i(TAG, list.get(i).packageName);
+		}
+	}
+	
+	/**
+	 * log输出所有系统应用的包名信息
+	 * @author Crow
+	 * @date 2015-4-23上午11:14:49
+	 * @param context
+	 */
+	public static void showSystemApps(Context context){
+		List<PackageInfo> list = getSystemApps(context);
+		for(int i=0,l=list.size();i < l;i++){
+			Log.i(TAG, list.get(i).packageName);
+		}
 	}
 	
 	/**

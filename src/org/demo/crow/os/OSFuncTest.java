@@ -26,6 +26,7 @@ public class OSFuncTest extends Fragment {
 	private Button btn_isWifiConnected;
 	private Button btn_isMobileConnected;
 	private Button btn_showAllCommonApps;
+	private Button btn_showAllSystemApps;
 	private Button btn_showRunningApps;
 	private Button btn_showActiveApp;
 	private Button btn_showRunningServices;
@@ -65,6 +66,7 @@ public class OSFuncTest extends Fragment {
 		btn_isWifiConnected = (Button) view.findViewById(R.id.btn_isWifiConnected);
 		btn_isMobileConnected = (Button) view.findViewById(R.id.btn_isMobileConnected);
 		btn_showAllCommonApps = (Button) view.findViewById(R.id.btn_showAllCommonApps);
+		btn_showAllSystemApps = (Button) view.findViewById(R.id.btn_showAllSystemApps);
 		btn_showRunningApps = (Button) view.findViewById(R.id.btn_showRunningApps);
 		btn_showActiveApp = (Button) view.findViewById(R.id.btn_showActiveApp);
 		btn_showRunningServices = (Button) view.findViewById(R.id.btn_showRunningServices);
@@ -113,7 +115,14 @@ public class OSFuncTest extends Fragment {
 		btn_showAllCommonApps.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				CommonUtils.showAllCommonApps(mActivity);
+				CommonUtils.showCommonApps(mActivity);
+			}
+		});
+		// 展示所有系统应用
+		btn_showAllSystemApps.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				CommonUtils.showSystemApps(mActivity);
 			}
 		});
 		// 展示运行时进程

@@ -60,9 +60,6 @@ public class MainActivity extends ActionBarActivity {
 		// 检查SDCard根目录下是否存在名为android.crow.demo的文件夹，没有则创建
 		FileUtils.createDir(new File(app.getSdcardPath() + "/android.crow.demo/"));
 		
-		// 输出所有非系统应用
-        CommonUtils.showAllCommonApps(this);
-		
 		// 注册广播监听器
 		registerReceiver();
 	}

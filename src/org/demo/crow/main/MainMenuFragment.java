@@ -2,6 +2,7 @@ package org.demo.crow.main;
 
 import org.crow.android.utils.BasicUtils;
 import org.crow.android.utils.TransferBasicInfo;
+import org.demo.crow.activity.A;
 import org.demo.crow.application.ApplicationTest;
 import org.demo.crow.application.ApplicationTestActivity;
 import org.demo.crow.bitmap.ThumbnailDemo;
@@ -190,7 +191,8 @@ public class MainMenuFragment extends Fragment implements OnItemClickListener {
 			"缩略图相关演示",
 			"声音和亮度",
 			"系统相关功能",
-			"Service演示"
+			"Service演示",
+			"关于Activity"
 		};
 		return data;
 	}
@@ -240,6 +242,9 @@ public class MainMenuFragment extends Fragment implements OnItemClickListener {
 				fragment = new OSFuncTest();
 			}else if(position == 16 && mActivity.findViewById(R.id.fm_simpleServiceDemo) == null){
 				fragment = new SimpleServiceDemo();
+			}else if(position == 17){
+				startActivity(new Intent(mActivity, A.class));
+				return;
 			}
 			if(fragment == null){
 				return;
@@ -300,6 +305,9 @@ public class MainMenuFragment extends Fragment implements OnItemClickListener {
 				break;
 			case 16: 
 				intent = new Intent(mActivity, SimpleServiceDemoActivity.class);
+				break;
+			case 17: 
+				intent = new Intent(mActivity, A.class);
 				break;
 			}
 			startActivity(intent);

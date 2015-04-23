@@ -66,7 +66,7 @@ public class FileDemo extends Fragment {
 				// value资源文件中定义有一些文件后缀名，可以将支持的，能够打开的文件的后缀加入其中
 				// 之后在需要时，如以下代码所示使用getResources().getStringArray()方法获取String数组
 				// 判断目标文件的后缀在数组中是否出现，如果出现了，就调用获取intent的方法
-				File file = new File(app.getSdcardPath() + "/android.crow.demo/1.jpg");
+				File file = new File(app.getSdcardPath() + getResources().getString(R.string.test_img_path));
 				String fileName = file.getName();
 				if(checkPostfixInArray(fileName, getResources().getStringArray(R.array.image))){
 					Intent intent = FileUtils.getFileIntent(file);
@@ -83,7 +83,7 @@ public class FileDemo extends Fragment {
 				// 下面代码所示的方法更简单，但执行的门槛降低，恐怕安全性不足。逻辑如下：
 				// 定义一个map集合，保存文件后缀和mimetype的对应关系；
 				// 获得目标文件的后缀，从集合中获取mimetype，之后即可获取intent
-				File file = new File(app.getSdcardPath() + "/android.crow.demo/2.mp4");
+				File file = new File(app.getSdcardPath() + getResources().getString(R.string.test_video_path));
 				Intent intent = FileUtils.getFileIntent(file);
 				startActivity(intent);
 			}
@@ -92,7 +92,7 @@ public class FileDemo extends Fragment {
 		btn_openAnAudioFile.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				File file = new File(app.getSdcardPath() + "/android.crow.demo/一生有你 - 水木年华.mp3");
+				File file = new File(app.getSdcardPath() + getResources().getString(R.string.test_audio_path));
 				Intent intent = FileUtils.getFileIntent(file);
 				startActivity(intent);
 			}
@@ -101,7 +101,7 @@ public class FileDemo extends Fragment {
 		btn_openATextFile.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				File file = new File(app.getSdcardPath() + "/android.crow.demo/访问路径.txt");
+				File file = new File(app.getSdcardPath() + getResources().getString(R.string.test_text_path));
 				Intent intent = FileUtils.getFileIntent(file);
 				startActivity(intent);
 			}
@@ -110,7 +110,7 @@ public class FileDemo extends Fragment {
 		btn_openANonePostfixFile.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				File file = new File(app.getSdcardPath() + "/android.crow.demo/e_config");
+				File file = new File(app.getSdcardPath() + getResources().getString(R.string.test_file_path));
 				Intent intent = FileUtils.getFileIntent(file);
 				startActivity(intent);
 			}
@@ -119,7 +119,7 @@ public class FileDemo extends Fragment {
 		btn_openADocFile.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				File file = new File(app.getSdcardPath() + "/android.crow.demo/C007.doc");
+				File file = new File(app.getSdcardPath() + getResources().getString(R.string.test_doc1_path));
 				Intent intent = FileUtils.getFileIntent(file);
 				startActivity(intent);
 			}
@@ -128,7 +128,7 @@ public class FileDemo extends Fragment {
 		btn_openADocFileByWps.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				File file = new File(app.getSdcardPath() + "/android.crow.demo/C12.docx");
+				File file = new File(app.getSdcardPath() + getResources().getString(R.string.test_doc2_path));
 				Intent intent = new Intent(Intent.ACTION_VIEW);
 				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				intent.setClassName("cn.wps.moffice_eng", "cn.wps.moffice.documentmanager.PreStartActivity2");
@@ -145,7 +145,7 @@ public class FileDemo extends Fragment {
 				// 设置第三方程序的包名，wps关闭文档的广播返回的信息中包含该内容
 				bundle.putString(WpsUtils.THIRD_PACKAGE, mActivity.getPackageName());
 				// 该值在将打开模式设置为SaveOnly时有意义
-				bundle.putString(WpsUtils.SAVE_PATH, app.getSdcardPath() + "/android.crow.demo/C3.docx");
+				bundle.putString(WpsUtils.SAVE_PATH, app.getSdcardPath() + getResources().getString(R.string.test_doc3_path));
 				bundle.putString(WpsUtils.USER_NAME, "Crow");// 指定操作文档的人
 				intent.putExtras(bundle);
 				startActivity(intent);
@@ -155,7 +155,7 @@ public class FileDemo extends Fragment {
 		btn_openAWebPage.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				File file = new File(app.getSdcardPath() + "/android.crow.demo/clog example.html");
+				File file = new File(app.getSdcardPath() + getResources().getString(R.string.test_html_path));
 				Intent intent = FileUtils.getFileIntent(file);
 				// 或者：
 				/*
@@ -175,7 +175,7 @@ public class FileDemo extends Fragment {
 		btn_openWebUrl.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Uri uri = Uri.parse("http://www.imooc.com");
+				Uri uri = Uri.parse(getResources().getString(R.string.test_url));
 				Intent intent = new Intent(Intent.ACTION_VIEW, uri);
 				startActivity(intent);
 			}
@@ -184,7 +184,7 @@ public class FileDemo extends Fragment {
 		btn_openAnApkFile.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				File file = new File(app.getSdcardPath() + "/android.crow.demo/es.apk");
+				File file = new File(app.getSdcardPath() + getResources().getString(R.string.test_apk_path));
 				Intent intent = FileUtils.getFileIntent(file);
 				startActivity(intent);
 			}

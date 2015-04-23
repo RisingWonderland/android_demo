@@ -14,5 +14,20 @@
     <string name="label_file_file">File处理相关演示</string>
     <string name="label_thumbnail_demo">缩略图相关演示</string>
     <string name="label_sound_and_light">声音和亮度</string>
+    <string name="label_activity_a">Activity A</string>
+    <string name="label_activity_b">Activity B</string>
+    <string name="test_img_path">/android.crow.demo/1.jpg</string>
+    <string name="test_img_folder_path">android.crow.demo/imgs</string>
+    <string name="test_video_path">/android.crow.demo/2.mp4</string>
+    <string name="test_audio_path">/android.crow.demo/一生有你 - 水木年华.mp3</string>
+    <string name="test_text_path">/android.crow.demo/path.txt</string>
+    <string name="test_file_path">/android.crow.demo/e_config</string>
+    <string name="test_doc1_path">/android.crow.demo/C007.doc</string>
+    <string name="test_doc2_path">/android.crow.demo/C12.docx</string>
+    <string name="test_doc3_path">/android.crow.demo/C3.docx</string>
+    <string name="test_html_path">/android.crow.demo/clog example.html</string>
+    <string name="test_url">http://www.live.com</string>
+    <string name="test_apk_path">/android.crow.demo/es.apk</string>
+    
 
 </resources>
