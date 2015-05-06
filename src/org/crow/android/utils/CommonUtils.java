@@ -14,6 +14,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.PermissionInfo;
 import android.net.Uri;
 import android.util.Log;
 
@@ -145,10 +148,11 @@ public class CommonUtils {
 	 * @author Crow
 	 * @date 2015-4-16下午3:30:10
 	 * @param context
+	 * @param flags
 	 * @return
 	 */
-	public static List<PackageInfo> getAllAppsPackageInfo(Context context){
-		return context.getPackageManager().getInstalledPackages(0);
+	public static List<PackageInfo> getAllAppsPackageInfo(Context context, int flags){
+		return context.getPackageManager().getInstalledPackages(flags);
 	}
 	
 	/**
@@ -159,7 +163,7 @@ public class CommonUtils {
 	 * @return
 	 */
 	public static List<PackageInfo> getSystemApps(Context context){
-		List<PackageInfo> piList = getAllAppsPackageInfo(context);
+		List<PackageInfo> piList = getAllAppsPackageInfo(context, 0);
 		List<PackageInfo> appList = new ArrayList<PackageInfo>();
 		for(int i=0,l=piList.size();i < l;i++){
 			PackageInfo pi = piList.get(i);
@@ -178,7 +182,7 @@ public class CommonUtils {
 	 * @return
 	 */
 	public static List<PackageInfo> getCommonApps(Context context){
-		List<PackageInfo> piList = getAllAppsPackageInfo(context);
+		List<PackageInfo> piList = getAllAppsPackageInfo(context, 0);
 		List<PackageInfo> appList = new ArrayList<PackageInfo>();
 		for(int i=0,l=piList.size();i < l;i++){
 			PackageInfo pi = piList.get(i);
@@ -288,4 +292,43 @@ public class CommonUtils {
 		}
 	}
 	
+	/**
+	 * 获得指定APP的所有权限列表
+	 * @author Crow
+	 * @date 2015-5-6下午5:34:31
+	 * @param context
+	 * @param packageName
+	 */
+	public static List<PermissionInfo> getAppPermissionList(Context context, String packageName){
+		List<PermissionInfo> permissionInfoList = new ArrayList<PermissionInfo>();
+		PackageManager pm = context.getPackageManager();
+		PackageInfo pi;
+		try {
+			pi = pm.getPackageInfo(packageName, PackageManager.GET_PERMISSIONS);
+			String[] permissions = pi.requestedPermissions;
+			if(permissions != null){
+				for(String str : permissions){
+					PermissionInfo permissionInfo = context.getPackageManager().getPermissionInfo(str, 0);
+					permissionInfoList.add(permissionInfo);
+				}
+			}
+		} catch (NameNotFoundException e) {
+			e.printStackTrace();
+		}
+		return permissionInfoList;
+	}
+	
+	/**
+	 * Log输出指定APP的所有权限列表
+	 * @author Crow
+	 * @date 2015-5-6下午5:39:43
+	 * @param context
+	 * @param packageName
+	 */
+	public static void showAppPermissionList(Context context, String packageName){
+		List<PermissionInfo> permissionInfoList = getAppPermissionList(context, packageName);
+		for(PermissionInfo permInfo : permissionInfoList){
+			Log.i(TAG, permInfo.name);
+		}
+	}
 }

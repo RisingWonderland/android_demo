@@ -30,6 +30,7 @@ public class OSFuncTest extends Fragment {
 	private Button btn_showRunningApps;
 	private Button btn_showActiveApp;
 	private Button btn_showRunningServices;
+	private Button btn_showAppsPermission;
 	
 	@Override
 	public void onAttach(Activity activity) {
@@ -70,6 +71,7 @@ public class OSFuncTest extends Fragment {
 		btn_showRunningApps = (Button) view.findViewById(R.id.btn_showRunningApps);
 		btn_showActiveApp = (Button) view.findViewById(R.id.btn_showActiveApp);
 		btn_showRunningServices = (Button) view.findViewById(R.id.btn_showRunningServices);
+		btn_showAppsPermission = (Button) view.findViewById(R.id.btn_showAppsPermission);
 	}
 
 	/**
@@ -146,6 +148,14 @@ public class OSFuncTest extends Fragment {
 				CommonUtils.showRunningServices(mActivity);
 			}
 		});
+		// 展示应用申请到的权限
+		btn_showAppsPermission.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				CommonUtils.showAppPermissionList(mActivity, mActivity.getPackageName());
+			}
+		});
+		
 	}
 
 	@Override

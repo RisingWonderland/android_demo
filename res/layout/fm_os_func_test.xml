@@ -51,5 +51,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="展示运行中服务"/>
+    <Button 
+        android:id="@+id/btn_showAppsPermission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="展示应用权限"/>
 
 </LinearLayout>
