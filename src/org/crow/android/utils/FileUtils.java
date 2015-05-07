@@ -11,7 +11,11 @@ import java.util.Map;
 import android.content.Intent;
 import android.net.Uri;
 import android.util.Log;
-
+/**
+ * File相关操作类
+ * @author Crow
+ * @date 2015-4-7
+ */
 public class FileUtils {
 	
 	private static final String TAG = "Crow_FileUtils";
@@ -36,7 +40,7 @@ public class FileUtils {
 	/**
 	 * 判断一个文件是否存在
 	 * @author Crow
-	 * @date 2015-4-7下午3:53:26
+	 * @date 2015-4-7
 	 * @param file 目标文件对象
 	 * @return
 	 */
@@ -50,7 +54,7 @@ public class FileUtils {
 	/**
 	 * 判断一个文件是否存在
 	 * @author Crow
-	 * @date 2015-4-7下午3:55:52
+	 * @date 2015-4-7
 	 * @param filePath 目标文件的绝对路径
 	 * @return
 	 */
@@ -62,7 +66,7 @@ public class FileUtils {
 	/**
 	 * 创建文件夹。如果文件夹存在，不删除，返回true。
 	 * @author Crow
-	 * @date 2015-4-7下午3:57:26
+	 * @date 2015-4-7
 	 * @param file
 	 * @return
 	 */
@@ -72,7 +76,7 @@ public class FileUtils {
 	/**
 	 * 创建文件夹。如果文件夹存在，根据overwrite的值判断是否删除原有数据。
 	 * @author Crow
-	 * @date 2015-4-7下午4:07:53
+	 * @date 2015-4-7
 	 * @param file
 	 * @param overwrite
 	 * @return
@@ -93,7 +97,7 @@ public class FileUtils {
 	/**
 	 * 删除文件或文件夹
 	 * @author Crow
-	 * @date 2015-4-7下午5:02:53
+	 * @date 2015-4-7
 	 * @param file
 	 */
 	public static void deleteFile(File file){
@@ -115,7 +119,7 @@ public class FileUtils {
 	/**
 	 * 获取文件后缀名
 	 * @author Crow
-	 * @date 2015-4-8下午4:37:29
+	 * @date 2015-4-8
 	 * @param file
 	 * @return
 	 */
@@ -125,7 +129,7 @@ public class FileUtils {
 	/**
 	 * 获取文件后缀名
 	 * @author Crow
-	 * @date 2015-4-8下午4:38:47
+	 * @date 2015-4-8
 	 * @param file
 	 * @param separator 在返回的字符串中是否保留后缀
 	 * @return
@@ -138,7 +142,7 @@ public class FileUtils {
 	 * 根据文件名的后缀，获得MimeType，然后据此设置Intent
 	 * 如果目标文件无后缀，将其视为普通文本文件，在对应集合中MimeType的值为text/plain
 	 * @author Crow
-	 * @date 2015-4-8下午1:28:29
+	 * @date 2015-4-8
 	 * @param file
 	 * @return
 	 */
@@ -159,6 +163,7 @@ public class FileUtils {
 	/**
 	 * 获得文件类型，分别为-普通文件、d目录、l软连接
 	 * @param filePath 目标文件目录
+	 * @date 2015-4-8
 	 * @return
 	 */
 	public static String getFileType(String filePath){
@@ -179,6 +184,7 @@ public class FileUtils {
 	/**
 	 * 判断文件是否可以写入
 	 * @param binPath 目标文件路径
+	 * @date 2015-4-8
 	 * @return
 	 */
 	public static boolean isFileReadable(String filePath) {
@@ -195,6 +201,7 @@ public class FileUtils {
 	/**
 	 * 判断文件是否可以读取
 	 * @param binPath 目标文件路径
+	 * @date 2015-4-8
 	 * @return
 	 */
 	public static boolean isFileWritable(String filePath) {
@@ -211,6 +218,7 @@ public class FileUtils {
 	/**
 	 * 判断文件是否可以执行
 	 * @param binPath 目标文件路径
+	 * @date 2015-4-8
 	 * @return
 	 */
 	public static boolean isFileExecutable(String filePath) {
@@ -227,6 +235,7 @@ public class FileUtils {
 	/**
 	 * 获得文件的权限信息，一般文本格式如下：lrwxrwxrwx
 	 * @param filePath 目标文件的路径
+	 * @date 2015-4-8
 	 * @return 返回char型数组
 	 */
 	public static String getFilePermission(String filePath){
@@ -256,7 +265,7 @@ public class FileUtils {
 	/**
 	 * 初始化文件后缀与MimeType对应关系集合
 	 * @author Crow
-	 * @date 2015-4-8下午1:30:08
+	 * @date 2015-4-8
 	 */
 	private static void initMimeType() {
 		MIME_TYPE_MAP.put("", "text/plain");

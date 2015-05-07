@@ -1,7 +1,7 @@
 package org.demo.crow.popuplayer;
 
 import org.crow.android.utils.BasicUtils;
-import org.crow.android.utils.TransferBasicInfo;
+import org.crow.android.utils.CacheBasicInfo;
 
 import android.app.Activity;
 import android.app.Fragment;

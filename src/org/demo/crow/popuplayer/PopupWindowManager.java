@@ -3,7 +3,7 @@ package org.demo.crow.popuplayer;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.crow.android.utils.TransferBasicInfo;
+import org.crow.android.utils.CacheBasicInfo;
 
 import org.demo.crow.R;
 
@@ -88,7 +88,7 @@ public class PopupWindowManager {
 	 */
 	private void initPW() {
 		this.pwAnimationStyle = -1;
-		this.screenDpi = TransferBasicInfo.getInstance().getDpi();
+		this.screenDpi = CacheBasicInfo.getInstance().getDpi();
 	}
 	
 	/**

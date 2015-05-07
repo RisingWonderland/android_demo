@@ -1,10 +1,10 @@
 package org.crow.android.utils;
 
-public class TransferBasicInfo {
+public class CacheBasicInfo {
 
-	private TransferBasicInfo() {}
-	private static TransferBasicInfo self = new TransferBasicInfo();
-	public static TransferBasicInfo getInstance() {
+	private CacheBasicInfo() {}
+	private static CacheBasicInfo self = new CacheBasicInfo();
+	public static CacheBasicInfo getInstance() {
 		return self;
 	}
 

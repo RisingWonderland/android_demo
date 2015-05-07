@@ -68,7 +68,7 @@ public class OSUtils {
 	/**
 	 * 获得音频管理器
 	 * @author Crow
-	 * @date 2015-4-12上午11:38:42
+	 * @date 2015-4-12
 	 * @param context
 	 * @return
 	 */
@@ -80,7 +80,7 @@ public class OSUtils {
 	 * 返回系统音量，数组元素1是当前音量，元素2是最大音量。
 	 * 安卓的最大音量是15。
 	 * @author Crow
-	 * @date 2015-4-12上午11:49:51
+	 * @date 2015-4-12
 	 * @param context
 	 * @return
 	 */
@@ -93,7 +93,7 @@ public class OSUtils {
 	/**
 	 * 返回通话音量，数组元素1是当前音量，元素2是最大音量
 	 * @author Crow
-	 * @date 2015-4-12上午11:50:43
+	 * @date 2015-4-12
 	 * @param context
 	 * @return
 	 */
@@ -106,7 +106,7 @@ public class OSUtils {
 	/**
 	 * 返回媒体音量，数组元素1是当前音量，元素2是最大音量
 	 * @author Crow
-	 * @date 2015-4-12上午11:50:49
+	 * @date 2015-4-12
 	 * @param context
 	 * @return
 	 */
@@ -119,7 +119,7 @@ public class OSUtils {
 	/**
 	 * 返回铃声音量，数组元素1是当前音量，元素2是最大音量
 	 * @author Crow
-	 * @date 2015-4-12上午11:50:52
+	 * @date 2015-4-12
 	 * @param context
 	 * @return
 	 */
@@ -132,7 +132,7 @@ public class OSUtils {
 	/**
 	 * 返回闹钟提示音量，数组元素1是当前音量，元素2是最大音量
 	 * @author Crow
-	 * @date 2015-4-12上午11:50:56
+	 * @date 2015-4-12
 	 * @param context
 	 * @return
 	 */
@@ -146,7 +146,7 @@ public class OSUtils {
 	/**
 	 * 以具体数值设置媒体音量
 	 * @author Crow
-	 * @date 2015-4-12下午4:25:02
+	 * @date 2015-4-12
 	 * @param am
 	 * @param value
 	 */
@@ -165,7 +165,7 @@ public class OSUtils {
 	 * 将设备媒体音量设为0。
 	 * 如果要恢复到静音前的音量，调用restoreVolume方法，但两个方法要传入相同的activity
 	 * @author Crow
-	 * @date 2015-4-12上午11:57:06
+	 * @date 2015-4-12
 	 * @param context
 	 */
 	public static void deviceSilence(Context context){
@@ -184,7 +184,7 @@ public class OSUtils {
 	/**
 	 * 将设备媒体音量设置为执行了deviceSilence方法前的大小。
 	 * @author Crow
-	 * @date 2015-4-12下午12:04:09
+	 * @date 2015-4-12
 	 * @param context
 	 */
 	public static void restoreVolume(Context context){
@@ -195,7 +195,7 @@ public class OSUtils {
 	 * 如果没有找到之前缓存的音量值，并且提供的默认音量值是正数，将该值设置用于媒体音量。
 	 * 否则，不做任何修改。
 	 * @author Crow
-	 * @date 2015-4-12下午12:13:25
+	 * @date 2015-4-12
 	 * @param context
 	 * @param defValue
 	 */
@@ -217,7 +217,7 @@ public class OSUtils {
 	/**
 	 * 降低媒体音量
 	 * @author Crow
-	 * @date 2015-4-12下午4:10:47
+	 * @date 2015-4-12
 	 * @param context
 	 * @return
 	 */
@@ -229,7 +229,7 @@ public class OSUtils {
 	/**
 	 * 提高媒体音量
 	 * @author Crow
-	 * @date 2015-4-12下午4:12:58
+	 * @date 2015-4-12
 	 * @param context
 	 * @return
 	 */
@@ -246,7 +246,7 @@ public class OSUtils {
 	/**
 	 * 获得当前系统屏幕亮度
 	 * @author Crow
-	 * @date 2015-4-12下午5:32:33
+	 * @date 2015-4-12
 	 * @param context
 	 * @return
 	 */
@@ -258,7 +258,7 @@ public class OSUtils {
 	 * 获得当前系统屏幕亮度模式。得出的结果可以与当前类中的
 	 * SCREEN_BRIGHTNESS_MODE_AUTOMATIC和SCREEN_BRIGHTNESS_MODE_MANUAL进行比较。
 	 * @author Crow
-	 * @date 2015-4-12下午5:39:13
+	 * @date 2015-4-12
 	 * @param context
 	 * @return
 	 */
@@ -269,7 +269,7 @@ public class OSUtils {
 	/**
 	 * 返回当前是否是自动亮度调节模式
 	 * @author Crow
-	 * @date 2015-4-13下午1:05:10
+	 * @date 2015-4-13
 	 * @param context
 	 * @return
 	 */
@@ -279,7 +279,7 @@ public class OSUtils {
 	/**
 	 * 将当前亮度调节模式设置为自动
 	 * @author Crow
-	 * @date 2015-4-12下午7:23:54
+	 * @date 2015-4-12
 	 * @param context
 	 */
 	public static void setBrightnessAutomatic(Context context){
@@ -289,7 +289,7 @@ public class OSUtils {
 	/**
 	 * 将当前亮度调节模式设置为手动
 	 * @author Crow
-	 * @date 2015-4-12下午7:26:12
+	 * @date 2015-4-12
 	 * @param context
 	 */
 	public static void setBrightnessManual(Context context){
@@ -300,7 +300,7 @@ public class OSUtils {
 	/**
 	 * 降低指定Activity所在的屏幕亮度
 	 * @author Crow
-	 * @date 2015-4-13下午1:41:59
+	 * @date 2015-4-13
 	 * @param activity
 	 */
 	public static void decreaseActivityBrightness(Activity activity){
@@ -309,7 +309,7 @@ public class OSUtils {
 	/**
 	 * 提高指定Activity所在的屏幕亮度
 	 * @author Crow
-	 * @date 2015-4-13下午1:40:36
+	 * @date 2015-4-13
 	 * @param activity
 	 */
 	public static void increaseActivityBrightness(Activity activity){
@@ -318,7 +318,7 @@ public class OSUtils {
 	/**
 	 * 降低系统屏幕亮度
 	 * @author Crow
-	 * @date 2015-4-12下午7:48:24
+	 * @date 2015-4-12
 	 * @param activity
 	 */
 	public static void decreaseSystemBrightness(Activity activity){
@@ -327,7 +327,7 @@ public class OSUtils {
 	/**
 	 * 提高系统屏幕亮度
 	 * @author Crow
-	 * @date 2015-4-12下午7:52:27
+	 * @date 2015-4-12
 	 * @param activity
 	 */
 	public static void increaseSystemBrightness(Activity activity){
@@ -337,7 +337,7 @@ public class OSUtils {
 	 * 增大或降低屏幕亮度
 	 * 如果参数controlSystemBrightness的值为true，调节系统亮度，否则只调节当前Activity的亮度。
 	 * @author Crow
-	 * @date 2015-4-12下午7:51:53
+	 * @date 2015-4-12
 	 * @param activity
 	 * @param value
 	 * @param controlSystemBrightness 是否调节系统亮度
@@ -393,7 +393,7 @@ public class OSUtils {
 	/**
 	 * 设置目标Activity的亮度
 	 * @author Crow
-	 * @date 2015-4-12下午7:57:51
+	 * @date 2015-4-12
 	 * @param activity
 	 * @param value 0 ~ 255
 	 */
@@ -403,7 +403,7 @@ public class OSUtils {
 	/**
 	 * 设置系统的屏幕亮度
 	 * @author Crow
-	 * @date 2015-4-13下午1:48:21
+	 * @date 2015-4-13
 	 * @param activity
 	 * @param value
 	 */
@@ -413,7 +413,7 @@ public class OSUtils {
 	/**
 	 * 以具体的数值设置屏幕亮度，如果参数三位true，设置系统亮度，否则只设置目标Activity的亮度。
 	 * @author Crow
-	 * @date 2015-4-13下午1:46:18
+	 * @date 2015-4-13
 	 * @param activity
 	 * @param value  0 ~ 255
 	 * @param controlSystemBrightness
@@ -435,7 +435,7 @@ public class OSUtils {
 	/**
 	 * 保持屏幕开启，只针对单个Activity有效
 	 * @author Crow
-	 * @date 2015-4-12下午5:07:53
+	 * @date 2015-4-12
 	 * @param activity
 	 */
 	public static void keepScreenOn(Activity activity){
@@ -444,7 +444,7 @@ public class OSUtils {
 	/**
 	 * 取消屏幕常量，只针对单个Activity有效
 	 * @author Crow
-	 * @date 2015-4-12下午5:10:46
+	 * @date 2015-4-12
 	 * @param activity
 	 */
 	public static void releaseScreenOn(Activity activity){
@@ -457,7 +457,7 @@ public class OSUtils {
 	/**
 	 * 判断当前网络连接是否可用（存在）
 	 * @author Crow
-	 * @date 2015-4-13下午3:24:31
+	 * @date 2015-4-13
 	 * @param context
 	 * @return
 	 */
@@ -474,7 +474,7 @@ public class OSUtils {
 	/**
 	 * 获得当前网络连接
 	 * @author Crow
-	 * @date 2015-4-13下午4:38:01
+	 * @date 2015-4-13
 	 * @param context
 	 * @return
 	 */
@@ -485,7 +485,7 @@ public class OSUtils {
 	/**
 	 * 判断WIFI网络是否连接可用
 	 * @author Crow
-	 * @date 2015-4-13下午4:47:41
+	 * @date 2015-4-13
 	 * @param context
 	 * @return
 	 */
@@ -500,7 +500,7 @@ public class OSUtils {
 	/**
 	 * 判断Mobile网络是否可用
 	 * @author Crow
-	 * @date 2015-4-13下午4:48:41
+	 * @date 2015-4-13
 	 * @param context
 	 * @return
 	 */
@@ -515,7 +515,7 @@ public class OSUtils {
 	/**
 	 * 进入网络配置界面
 	 * @author Crow
-	 * @date 2015-4-13下午4:53:41
+	 * @date 2015-4-13
 	 * @param context
 	 */
 	public static void enterWirelessConfigurationActivity(Context context){
@@ -529,7 +529,7 @@ public class OSUtils {
 	/**
 	 * 让虚拟键盘在开启和关闭之间转换
 	 * @author Crow
-	 * @date 2015-4-13下午3:05:24
+	 * @date 2015-4-13
 	 * @param context
 	 */
 	public static void toggleVirtualKeyboard(Context context){

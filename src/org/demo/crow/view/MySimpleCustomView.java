@@ -1,6 +1,6 @@
 package org.demo.crow.view;
 
-import org.crow.android.utils.TransferBasicInfo;
+import org.crow.android.utils.CacheBasicInfo;
 
 import org.demo.crow.R;
 
@@ -83,7 +83,7 @@ public class MySimpleCustomView extends View {
 	
 	private void init(){
 		mPaint = new Paint();
-		TransferBasicInfo tbc = TransferBasicInfo.getInstance();
+		CacheBasicInfo tbc = CacheBasicInfo.getInstance();
 		is2Page = tbc.isIs2Page();
 		SCREEN_WIDTH = tbc.getDpi()[0];
 		SCREEN_HEIGHT = tbc.getDpi()[1];

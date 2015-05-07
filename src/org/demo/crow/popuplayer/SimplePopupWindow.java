@@ -1,7 +1,7 @@
 package org.demo.crow.popuplayer;
 
 import org.crow.android.utils.BasicUtils;
-import org.crow.android.utils.TransferBasicInfo;
+import org.crow.android.utils.CacheBasicInfo;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -158,7 +158,7 @@ public class SimplePopupWindow extends Fragment implements OnClickListener {
 			int[] location = new int[2];
 			v.getLocationOnScreen(location);
 			// 获得屏幕分辨率
-			int[] screenDpi = TransferBasicInfo.getInstance().getDpi();
+			int[] screenDpi = CacheBasicInfo.getInstance().getDpi();
 			mPopupWindow4.showAtLocation(v, Gravity.NO_GRAVITY, screenDpi[0] - mPopupWindow4.getWidth() - 4, location[1] - mPopupWindow4.getHeight());
 			break;
 		}

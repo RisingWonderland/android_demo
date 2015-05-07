@@ -23,6 +23,7 @@ import android.util.Log;
 /**
  * 常用、通用工具类，需要BasicUtils类的支持。
  * @author Crow
+ * @date 2015-4-8
  *
  */
 public class CommonUtils {
@@ -34,6 +35,7 @@ public class CommonUtils {
 	
 	/**
 	 * 判断当前Android设备是否root
+	 * @date 2015-4-8
 	 */
 	public static boolean rootStatus(){
 		String binPath = "/system/bin/su";
@@ -51,6 +53,7 @@ public class CommonUtils {
 	 * 标准安装app
 	 * @param context 
 	 * @param apkPath 要安装的apk文件的路径
+	 * @date 2015-4-8
 	 */
 	public static void install(Context context, String apkPath){
 		Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -62,6 +65,7 @@ public class CommonUtils {
 	 * 标准卸载app
 	 * @param activity 
 	 * @param packagename 目标app的包名
+	 * @date 2015-4-8
 	 */
 	public static void uninstall(Context context, String packageName){
 		Uri packageURI = Uri.parse("package:" + packageName);
@@ -72,6 +76,7 @@ public class CommonUtils {
 	/**
 	 * 静默（后台）安装app，实现该功能需要Android设备已经root。返回一个int型状态码。
 	 * @param apkPath 目标apk文件路径
+	 * @date 2015-4-8
 	 * @return result 安装状态码
 	 */
 	public static int silentInstall(String apkPath){
@@ -109,6 +114,7 @@ public class CommonUtils {
 	/**
 	 * 静默（后台）安装app，实现该功能需要Android设备已经root，返回一个int型状态码。
 	 * @param appPackageNames 目标app的包名
+	 * @date 2015-4-8
 	 * @return result 卸载状态码
 	 */
 	public static int silentUninstall(String appPackageName){
@@ -146,7 +152,7 @@ public class CommonUtils {
 	/**
 	 * 获得所有已安装应用的PackageInfo列表
 	 * @author Crow
-	 * @date 2015-4-16下午3:30:10
+	 * @date 2015-4-16
 	 * @param context
 	 * @param flags
 	 * @return
@@ -158,7 +164,7 @@ public class CommonUtils {
 	/**
 	 * 获得所有系统应用的PackageInfo列表
 	 * @author Crow
-	 * @date 2015-4-23上午11:12:40
+	 * @date 2015-4-23
 	 * @param context
 	 * @return
 	 */
@@ -177,7 +183,7 @@ public class CommonUtils {
 	/**
 	 * 获得所有非系统应用的PackageInfo列表
 	 * @author Crow
-	 * @date 2015-4-23上午11:13:59
+	 * @date 2015-4-23
 	 * @param context
 	 * @return
 	 */
@@ -196,7 +202,7 @@ public class CommonUtils {
 	/**
 	 * log输出所有非系统应用的包名信息
 	 * @author Crow
-	 * @date 2015-4-9下午9:11:43
+	 * @date 2015-4-9
 	 * @param context
 	 */
 	public static void showCommonApps(Context context){
@@ -209,7 +215,7 @@ public class CommonUtils {
 	/**
 	 * log输出所有系统应用的包名信息
 	 * @author Crow
-	 * @date 2015-4-23上午11:14:49
+	 * @date 2015-4-23
 	 * @param context
 	 */
 	public static void showSystemApps(Context context){
@@ -222,7 +228,7 @@ public class CommonUtils {
 	/**
 	 * 获得正在运行中的进程的RunningAppProcessInfo对象的列表
 	 * @author Crow
-	 * @date 2015-4-16下午3:32:34
+	 * @date 2015-4-16
 	 * @param activity
 	 * @return
 	 */
@@ -234,7 +240,7 @@ public class CommonUtils {
 	/**
 	 * log输出正在运行的进程的名称
 	 * @author Crow
-	 * @date 2015-4-16下午3:28:11
+	 * @date 2015-4-16
 	 * @param context
 	 */
 	public static void showRunningApps(Context context){
@@ -247,7 +253,7 @@ public class CommonUtils {
 	/**
 	 * 获得当前活动程序的相关信息
 	 * @author Crow
-	 * @date 2015-4-16下午4:19:25
+	 * @date 2015-4-16
 	 * @param context
 	 * @return
 	 */
@@ -259,7 +265,7 @@ public class CommonUtils {
 	/**
 	 * log输出当前活动程序的
 	 * @author Crow
-	 * @date 2015-4-16下午4:22:51
+	 * @date 2015-4-16
 	 * @param context
 	 */
 	public static void showActiveApp(Context context){
@@ -270,7 +276,7 @@ public class CommonUtils {
 	/**
 	 * 获得运行中的Service的列表
 	 * @author Crow
-	 * @date 2015-4-16下午4:25:24
+	 * @date 2015-4-16
 	 * @param context
 	 * @return
 	 */
@@ -282,7 +288,7 @@ public class CommonUtils {
 	/**
 	 * log输出所有运行中的Service
 	 * @author Crow
-	 * @date 2015-4-16下午4:28:17
+	 * @date 2015-4-16
 	 * @param activity
 	 */
 	public static void showRunningServices(Context context){
@@ -295,7 +301,7 @@ public class CommonUtils {
 	/**
 	 * 获得指定APP的所有权限列表
 	 * @author Crow
-	 * @date 2015-5-6下午5:34:31
+	 * @date 2015-5-6
 	 * @param context
 	 * @param packageName
 	 */
@@ -321,7 +327,7 @@ public class CommonUtils {
 	/**
 	 * Log输出指定APP的所有权限列表
 	 * @author Crow
-	 * @date 2015-5-6下午5:39:43
+	 * @date 2015-5-6
 	 * @param context
 	 * @param packageName
 	 */

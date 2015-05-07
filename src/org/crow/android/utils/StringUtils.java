@@ -13,7 +13,7 @@ public class StringUtils {
 	/**
 	 * 获取文件后缀名
 	 * @author Crow
-	 * @date 2015-4-8下午4:35:40
+	 * @date 2015-4-8
 	 * @param str
 	 * @return
 	 */
@@ -23,7 +23,7 @@ public class StringUtils {
 	/**
 	 * 获取文件后缀名
 	 * @author Crow
-	 * @date 2015-4-8下午4:35:34
+	 * @date 2015-4-8
 	 * @param str
 	 * @param retainSeparator 是否保留后缀
 	 * @return
@@ -34,7 +34,7 @@ public class StringUtils {
 	/**
 	 * 根据指定的分隔符，获取文件后缀名
 	 * @author Crow
-	 * @date 2015-4-8下午4:35:32
+	 * @date 2015-4-8
 	 * @param str
 	 * @param separator 用于截取后缀的分隔符
 	 * @return
@@ -45,7 +45,7 @@ public class StringUtils {
 	/**
 	 * 根据指定的分隔符，获取文件后缀名
 	 * @author Crow
-	 * @date 2015-4-8下午4:35:29
+	 * @date 2015-4-8
 	 * @param str
 	 * @param separator 用于截取后缀的分隔符
 	 * @param retainSeparator 是否保留后缀
@@ -57,7 +57,7 @@ public class StringUtils {
 	/**
 	 * 根据指定的分隔符，获取文件后缀名
 	 * @author Crow
-	 * @date 2015-4-8下午4:18:03
+	 * @date 2015-4-8
 	 * @param str 目标字符串
 	 * @param separator 用于截取后缀名的分隔符
 	 * @param retainSeparator 返回的后缀名是否保留分隔符

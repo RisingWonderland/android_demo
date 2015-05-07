@@ -5,7 +5,7 @@ import java.io.File;
 import org.crow.android.utils.BasicUtils;
 import org.crow.android.utils.CommonUtils;
 import org.crow.android.utils.FileUtils;
-import org.crow.android.utils.TransferBasicInfo;
+import org.crow.android.utils.CacheBasicInfo;
 import org.demo.crow.R;
 import org.demo.crow.application.MyApplication;
 import org.demo.crow.broadcastreceiver.DeviceBtnReceiver;
@@ -48,7 +48,7 @@ public class MainActivity extends ActionBarActivity {
 		res = this.getResources();
 		fm = getFragmentManager();
 		// 获得中转站
-		TransferBasicInfo tbc = TransferBasicInfo.getInstance();
+		CacheBasicInfo tbc = CacheBasicInfo.getInstance();
 		// 获得设备屏幕分辨率，缓存至中转站
 		tbc.setDpi(BasicUtils.getScreenDpi(this));
 		// 缓存双页模式下，主界面左侧列表区域的宽度

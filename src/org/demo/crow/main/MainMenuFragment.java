@@ -1,7 +1,7 @@
 package org.demo.crow.main;
 
 import org.crow.android.utils.BasicUtils;
-import org.crow.android.utils.TransferBasicInfo;
+import org.crow.android.utils.CacheBasicInfo;
 import org.demo.crow.activity.A;
 import org.demo.crow.application.ApplicationTest;
 import org.demo.crow.application.ApplicationTestActivity;
@@ -109,7 +109,7 @@ public class MainMenuFragment extends Fragment implements OnItemClickListener {
 		// 所依存的Activity创建完毕后，检测Activity所使用的布局文件中是否存在ID为fl_main_details_view的控件。
 		// 如果存在，是双页模式，动态设置Fragment展示内容；
 		// 如果不存在，是单页模式，打开新的Activity展示内容。
-		TransferBasicInfo tbc = TransferBasicInfo.getInstance();
+		CacheBasicInfo tbc = CacheBasicInfo.getInstance();
 		if(mActivity.findViewById(R.id.fl_main_details_view) != null){
 			is2Page = true;
 		}else{
